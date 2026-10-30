@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE NGOC HUE SHOW - Netflix Portfolio</title>
+    <title>NGUYỄN THỊ NGỌC HUỆ - Personal Portfolio</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -23,6 +23,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,30 +40,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 18px 50px;
             z-index: 100;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
-            transition: 0.5s;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%);
         }
 
         .logo {
             color: var(--primary-red);
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             transition: 0.3s;
         }
@@ -71,34 +71,34 @@
             color: var(--primary-red);
         }
 
-        /* Hero Section (Poster lớn) */
+        /* 1. HOME (Hero Section) */
         .hero {
             position: relative;
-            height: 85vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             padding: 0 50px;
-            background: linear-gradient(90deg, rgba(20,20,20,1) 30%, rgba(20,20,20,0.4) 70%), url('TRASUA.jpg') no-repeat center right/cover;
+            background: linear-gradient(90deg, rgba(20,20,20,1) 40%, rgba(20,20,20,0.5) 70%), url('TRASUA.jpg') no-repeat center right/cover;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 650px;
             z-index: 10;
         }
 
         .show-badge {
             color: var(--primary-red);
             font-weight: 800;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            font-size: 13px;
         }
 
         .hero-title {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 15px;
             background: linear-gradient(45deg, #fff, var(--burgundy));
             -webkit-background-clip: text;
@@ -107,10 +107,11 @@
 
         .meta-info {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             margin-bottom: 20px;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-gray);
         }
 
@@ -121,12 +122,13 @@
 
         .badge-age {
             border: 1px solid var(--text-gray);
-            padding: 2px 6px;
-            font-size: 12px;
+            padding: 2px 8px;
+            font-size: 11px;
+            border-radius: 3px;
         }
 
         .hero-desc {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.6;
             color: var(--text-gray);
             margin-bottom: 30px;
@@ -138,66 +140,44 @@
         }
 
         .btn {
-            padding: 12px 28px;
+            padding: 12px 26px;
             border-radius: 4px;
             border: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
             transition: 0.3s;
+            text-decoration: none;
         }
 
-        .btn-primary {
-            background-color: var(--text-light);
-            color: var(--bg-dark);
-        }
-
-        .btn-primary:hover {
-            background-color: rgba(255,255,255,0.75);
-        }
-
-        .btn-secondary {
-            background-color: rgba(109, 109, 110, 0.7);
-            color: var(--text-light);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(109, 109, 110, 0.4);
-        }
+        .btn-primary { background-color: var(--text-light); color: var(--bg-dark); }
+        .btn-primary:hover { background-color: rgba(255,255,255,0.8); }
+        .btn-secondary { background-color: rgba(109, 109, 110, 0.7); color: var(--text-light); }
+        .btn-secondary:hover { background-color: rgba(109, 109, 110, 0.4); }
 
         /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-        }
+        .progress-container { width: 100%; height: 4px; background: rgba(255,255,255,0.1); }
+        .progress-bar { width: 40%; height: 100%; background: var(--primary-red); }
 
-        .progress-bar {
-            width: 35%;
-            height: 100%;
-            background: var(--primary-red);
-        }
-
-        /* Sections & Episode Cards */
-        .section-container {
-            padding: 40px 50px;
-        }
-
+        /* General Section Layout */
+        .section-container { padding: 50px 50px 20px 50px; }
         .section-title {
             font-size: 22px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 12px;
         }
 
         .card-row {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -207,92 +187,42 @@
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .ep-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
-            z-index: 10;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(229, 9, 20, 0.25);
         }
 
         .ep-img {
             width: 100%;
             height: 140px;
-            background: linear-gradient(135deg, var(--burgundy), #330000);
+            background: linear-gradient(135deg, var(--burgundy), #220000);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 40px;
+            font-size: 42px;
         }
 
-        .ep-info {
-            padding: 15px;
-        }
+        .ep-info { padding: 18px; }
+        .ep-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .ep-duration { font-size: 12px; color: var(--primary-red); margin-bottom: 8px; font-weight: 600; }
+        .ep-desc { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
 
-        .ep-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .ep-duration {
-            font-size: 12px;
-            color: var(--text-gray);
-            margin-bottom: 10px;
-        }
-
-        .ep-desc {
-            font-size: 13px;
-            color: var(--text-gray);
-            line-height: 1.4;
-        }
-
-        /* Modal / Episode Detail Window */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
+        /* Custom Box Style for About, Education, Achievements */
+        .info-box {
             background-color: var(--card-bg);
-            width: 90%;
-            max-width: 650px;
-            border-radius: 12px;
-            padding: 30px;
-            position: relative;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            line-height: 1.6;
             color: var(--text-gray);
         }
+        .info-box h3 { color: var(--text-light); margin-bottom: 10px; }
 
-        /* Easter Egg Notice */
-        .easter-egg {
-            background: linear-gradient(90deg, #800020, #141414);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-            text-align: center;
-            cursor: pointer;
-            border: 1px dashed var(--primary-red);
-        }
-
-        /* Footer */
+        /* Footer / 7. CONTACT */
         footer {
             padding: 50px;
             text-align: center;
@@ -300,6 +230,7 @@
             font-size: 13px;
             border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 50px;
+            background: #0d0d0d;
         }
     </style>
 </head>
@@ -307,135 +238,141 @@
 
     <!-- Navbar -->
     <nav>
-        <div class="logo">THE NGOC HUE SHOW</div>
+        <div class="logo">NGUYỄN THỊ NGỌC HUỆ / PERSONAL PORTFOLIO</div>
         <ul class="nav-links">
-            <li><a href="#hero">Trang Chủ</a></li>
-            <li><a href="#episodes">Tập Phim (Kỹ Năng)</a></li>
-            <li><a href="#behind-scenes">Hậu Trường (Dự Án)</a></li>
-            <li><a href="#contact">Liên Hệ</a></li>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#education">Học vấn</a></li>
+            <li><a href="#skills">Kỹ năng (Skills)</a></li>
+            <li><a href="#projects">Dự án (Projects)</a></li>
+            <li><a href="#achievements">Thành tích</a></li>
+            <li><a href="#contact">Liên hệ (Contact)</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section (Poster lớn) -->
-    <section class="hero" id="hero">
+    <!-- 1. HOME -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <div class="show-badge"><i class="fa-solid fa-film"></i> PHIM TÀI LIỆU NGUYÊN BẢN</div>
-            <h1 class="hero-title">NGUYỄN THỊ NGỌC HUỆ</h1>
+            <div class="show-badge"><i class="fa-solid fa-user-astronaut"></i> PERSONAL PORTFOLIO / GIỚI THIỆU BẢN THÂN</div>
+            <h1 class="hero-title">NGUYỄN THỊ<br>NGỌC HUỆ</h1>
             <div class="meta-info">
-                <span class="match-score">99% Độ Trùng Khớp Vị Trí</span>
-                <span>2026</span>
-                <span class="badge-age">MÙA 1</span>
-                <span>Full HD / Developer</span>
+                <span class="match-score">Sinh viên năm 2</span>
+                <span>Trường Đại Học / 2024 - 2026</span>
+                <span class="badge-age">EDUCATION / CAREER PROFILE</span>
+                <span>Chuyên ngành CNTT / Web Developer</span>
             </div>
             <p class="hero-desc">
-                Hành trình chinh phục đỉnh cao thiết kế UI/UX và lập trình phần mềm. Bối cảnh diễn ra tại TP. Thủ Đức với sự kết hợp hoàn hảo giữa tư duy sáng tạo và kỹ năng công nghệ thực chiến.
+                Chào mừng bạn đến với Portfolio của mình! Mình là sinh viên đam mê sáng tạo ứng dụng Web, thiết kế trải nghiệm người dùng (UX/UI) và phát triển các giải pháp công nghệ có tính ứng dụng cao.
             </p>
             <div class="hero-btns">
-                <button class="btn btn-primary" onclick="downloadCV()"><i class="fa-solid fa-download"></i> Tải CV (PDF)</button>
-                <button class="btn btn-secondary" onclick="openTrailer()"><i class="fa-solid fa-play"></i> Xem Trailer</button>
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-compass"></i> Khám phá Portfolio</a>
+                <button class="btn btn-secondary" onclick="alert('📥 Tải bản CV PDF thành công!')"><i class="fa-solid fa-file-pdf"></i> Tải CV (PDF)</button>
             </div>
         </div>
     </section>
 
     <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-bar" title="Tiến trình khám phá hồ sơ"></div>
+    <div class="progress-container"><div class="progress-bar"></div></div>
+
+    <!-- 2. ABOUT ME -->
+    <div class="section-container" id="about">
+        <div class="section-title"><i class="fa-solid fa-user" style="color: var(--primary-red);"></i> 2. Giới Thiệu Bản Thân (About Me)</div>
+        <div class="info-box">
+            <h3>🎯 Mục Tiêu Nghề Nghiệp</h3>
+            <p>• Tối ưu hóa kỹ năng lập trình Web Full-stack và ứng dụng các Framework hiện đại để giải quyết các bài toán thực tế.</p>
+            <p>• Định hướng trở thành một Web Developer / UI UX Designer chuyên nghiệp, mang đến trải nghiệm tinh tế cho người dùng.</p>
+            <p>📍 <b>Khu vực:</b> TP. Thủ Đức, TP. Hồ Chí Minh | 💬 <b>Phong cách:</b> Tỉ mỉ, sáng tạo, chủ động trong công việc.</p>
+        </div>
     </div>
 
-    <!-- Episodes (Kỹ năng) -->
-    <div class="section-container" id="episodes">
-        <div class="section-title"><i class="fa-solid fa-list-ul" style="color: var(--primary-red);"></i> Danh Sách Tập (Kỹ Năng Nổi Bật)</div>
+    <!-- 3. EDUCATION -->
+    <div class="section-container" id="education">
+        <div class="section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--primary-red);"></i> 3. Học Vấn (Education)</div>
+        <div class="info-box">
+            <h3>🏫 Trường Đại Học / Cao Đẳng</h3>
+            <p><b>Chuyên ngành:</b> Công nghệ Thông tin / Thương mại Điện tử</p>
+            <p><b>Năm học:</b> 2024 – 2026 (Sinh viên năm 2)</p>
+            <p>• Tích lũy kiến thức nền tảng vững chắc về Lập trình Web, Quản trị CSDL và Cấu trúc dữ liệu.</p>
+        </div>
+    </div>
+
+    <!-- 4. SKILLS -->
+    <div class="section-container" id="skills">
+        <div class="section-title"><i class="fa-solid fa-laptop-code" style="color: var(--primary-red);"></i> 4. KỸ NĂNG CHUYÊN MÔN (SKILLS)</div>
         <div class="card-row">
             
-            <div class="ep-card" onclick="openModal('Tập 1: Python & Web Frameworks', 'Chuyên sâu xây dựng ứng dụng Web tương tác với Python, Streamlit, Pandas và tối ưu luồng xử lý dữ liệu chuẩn nghiệp vụ.')">
-                <div class="ep-img">🐍</div>
+            <div class="ep-card">
+                <div class="ep-img">💻</div>
                 <div class="ep-info">
-                    <div class="ep-title">Tập 1: Python Masterclass</div>
-                    <div class="ep-duration">45 phút • Lập trình chính</div>
-                    <div class="ep-desc">Làm chủ ngôn ngữ Python và các thư viện phân tích dữ liệu, tự động hóa hệ thống.</div>
+                    <div class="ep-title">Kỹ năng chuyên môn</div>
+                    <div class="ep-duration">Python / Web Development</div>
+                    <div class="ep-desc">Lập trình Python, HTML/CSS Custom, Streamlit, xử lý dữ liệu với Pandas và xây dựng giao diện mượt mà.</div>
                 </div>
             </div>
 
-            <div class="ep-card" onclick="openModal('Tập 2: Nghệ Thuật UI/UX Minimalist', 'Tư duy thiết kế trải nghiệm người dùng tối giản, hài hòa màu sắc pastel/cinematic và cấu trúc Layout chuẩn mực.')">
-                <div class="ep-img">🎨</div>
+            <div class="ep-card">
+                <div class="ep-img">📊</div>
                 <div class="ep-info">
-                    <div class="ep-title">Tập 2: Vibe & Aesthetic UI</div>
-                    <div class="ep-duration">50 phút • Thiết kế giao diện</div>
-                    <div class="ep-desc">Biến mọi ứng dụng trở nên cuốn hút với tư duy thiết kế trải nghiệm hiện đại.</div>
+                    <div class="ep-title">Kỹ năng tin học</div>
+                    <div class="ep-duration">Office & Dev Tools</div>
+                    <div class="ep-desc">Thành thạo Git/GitHub, VS Code, Netlify Deployment, Microsoft Office và các công cụ quản lý dự án.</div>
                 </div>
             </div>
 
-            <div class="ep-card" onclick="openModal('Tập 3: Git & Cloud Deployment', 'Thành thạo triển khai mã nguồn lên GitHub, kết nối Netlify, Streamlit Cloud và CI/CD tự động.')">
-                <div class="ep-img">🚀</div>
+            <div class="ep-card">
+                <div class="ep-img">🌐</div>
                 <div class="ep-info">
-                    <div class="ep-title">Tập 3: Tối Ưu Hóa Cloud</div>
-                    <div class="ep-duration">30 phút • Hạ tầng & Quản lý</div>
-                    <div class="ep-desc">Đưa ứng dụng từ môi trường Local lên Internet cho hàng ngàn người dùng truy cập.</div>
+                    <div class="ep-title">Kỹ năng mềm & Ngoại ngữ</div>
+                    <div class="ep-duration">Soft Skills & English</div>
+                    <div class="ep-desc">Tư duy giải quyết vấn đề, làm việc nhóm hiệu quả, quản lý thời gian và đọc hiểu tài liệu tiếng Anh chuyên ngành.</div>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Behind the Scenes (Dự án) -->
-    <div class="section-container" id="behind-scenes">
-        <div class="section-title"><i class="fa-solid fa-clapperboard" style="color: var(--primary-red);"></i> Hậu Trường (Dự Án Đã Thực Hiện)</div>
+    <!-- 5. PROJECTS -->
+    <div class="section-container" id="projects">
+        <div class="section-title"><i class="fa-solid fa-box-archive" style="color: var(--primary-red);"></i> 5. DỰ ÁN & KINH NGHIỆM (PROJECTS & EXPERIENCE)</div>
         <div class="card-row">
-            <div class="ep-card" onclick="openModal('BOBA FACTORY - Web App Đặt Hàng Trà Sữa', 'Hệ thống POS trà sữa cao cấp tích hợp in tem Sticker ly, Mã VietQR động, Thẻ tích điểm Digital và màn hình bếp KDS.')">
+            
+            <div class="ep-card">
                 <div class="ep-img">🧋</div>
                 <div class="ep-info">
-                    <div class="ep-title">BOBA FACTORY Studio</div>
-                    <div class="ep-duration">Dự án Full-stack Web</div>
-                    <div class="ep-desc">Giải pháp Thương mại điện tử toàn diện dành cho tiệm trà sữa.</div>
+                    <div class="ep-title">BOBA FACTORY Web App</div>
+                    <div class="ep-duration">Dự án cá nhân thực tế</div>
+                    <div class="ep-desc">Ứng dụng bán trà sữa tích hợp tùy chỉnh sticker ly, mã VietQR tự động, thẻ tích điểm Digital và màn hình bếp KDS.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Easter Egg bí mật -->
-        <div class="easter-egg" onclick="triggerEasterEgg()">
-            🎁 <b>EASTER EGG BÍ MẬT:</b> Nhấn vào đây để mở khóa danh hiệu "Thánh Trà Sữa"!
-        </div>
-    </div>
+            <div class="ep-card">
+                <div class="ep-img">🎬</div>
+                <div class="ep-info">
+                    <div class="ep-title">THE NGOC HUE SHOW Portfolio</div>
+                    <div class="ep-duration">Dự án học tập</div>
+                    <div class="ep-desc">Website CV tương tác phong cách Netflix Cinematic được triển khai hoàn chỉnh trên Netlify App.</div>
+                </div>
+            </div>
 
-    <!-- Modal Chi Tiết Tập -->
-    <div class="modal" id="detailModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle" style="color: var(--primary-red); margin-bottom: 15px;"></h2>
-            <p id="modalDesc" style="line-height: 1.6; color: var(--text-gray);"></p>
         </div>
     </div>
 
-    <!-- Footer & Liên Hệ -->
+    <!-- 6. ACHIEVEMENTS -->
+    <div class="section-container" id="achievements">
+        <div class="section-title"><i class="fa-solid fa-trophy" style="color: var(--primary-red);"></i> 6. Thành Tích & Chứng Chỉ (Achievements)</div>
+        <div class="info-box">
+            <p>🏆 <b>Chứng nhận Đồ án xuất sắc:</b> Xây dựng hoàn chỉnh ứng dụng Web tương tác được đánh giá cao về trải nghiệm UX/UI.</p>
+            <p>📜 <b>Chứng chỉ Lập trình Web:</b> Hoàn thành khóa học triển khai ứng dụng Web Cloud với Git & Netlify.</p>
+        </div>
+    </div>
+
+    <!-- 7. CONTACT -->
     <footer id="contact">
-        <p style="font-size: 18px; color: var(--text-light); font-weight: 700; margin-bottom: 10px;">BẠN ĐÃ SẴN SÀNG HỢP TÁC CÙNG NGỌC HUỆ?</p>
-        <p>📞 Hotline/Zalo: 0702.884.202 | ✉️ Email: ngochue.art@gmail.com | 📍 TP. Thủ Đức, TP.HCM</p>
-        <p style="margin-top: 20px; color: #555;">© 2026 THE NGOC HUE SHOW. Mọi quyền được bảo lưu.</p>
+        <h3 style="font-size: 20px; color: var(--text-light); font-weight: 800; margin-bottom: 15px;">7. LIÊN HỆ VỚI NGỌC HUỆ (CONTACT)</h3>
+        <p>📞 <b>Hotline/Zalo:</b> 0702.884.202 | ✉️ <b>Email:</b> ngochue.art@gmail.com</p>
+        <p style="margin-top: 5px;">📍 <b>Địa chỉ:</b> TP. Thủ Đức, TP. Hồ Chí Minh | 🌐 <b>GitHub:</b> github.com/ntnhue117-art</p>
+        <p style="margin-top: 25px; color: #555;">© 2026 NGUYỄN THỊ NGỌC HUỆ. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript Tương Tác -->
-    <script>
-        function openModal(title, desc) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerText = desc;
-            document.getElementById('detailModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('detailModal').style.display = 'none';
-        }
-
-        function downloadCV() {
-            alert('📥 Đang chuẩn bị bản CV PDF chính thức của Nguyễn Thị Ngọc Huệ!');
-        }
-
-        function openTrailer() {
-            alert('🎬 Trailer "THE NGOC HUE SHOW": Chào mừng bạn đến với thế giới sáng tạo & lập trình!');
-        }
-
-        function triggerEasterEgg() {
-            alert('🎉 Chúc mừng bạn đã tìm thấy Easter Egg! Bạn nhận được danh hiệu "Nhà Tuyển Dụng Tinh Tế".');
-        }
-    </script>
 </body>
 </html>
