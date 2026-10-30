@@ -213,7 +213,7 @@
             gap: 22px;
         }
 
-        /* NETFLIX CARD INTERACTION */
+        /* CARD INTERACTION */
         .ep-card {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -286,7 +286,7 @@
 
         .info-box h3 { color: var(--text-light); margin-bottom: 10px; font-size: 18px; }
 
-        /* NETFLIX MODAL WINDOW (CỬA SỔ POPUP TƯƠNG TÁC) */
+        /* MODAL POPUP */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -354,6 +354,14 @@
             margin-top: 40px;
             background: #0d0d0d;
         }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding: 100px 20px 40px 20px; }
+            .hero-btns { justify-content: center; }
+            .section-container { padding: 30px 20px; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -392,9 +400,9 @@
             </div>
         </div>
 
-        <!-- Khung ảnh chân dung bên phải -->
+        <!-- Khung ảnh chân dung bên phải (Đã chỉnh đường dẫn chuẩn) -->
         <div class="hero-image-container">
-            <img src="TRASUA.jpg" alt="Nguyễn Thị Ngọc Huệ" class="hero-portrait" onerror="this.src='https://via.placeholder.com/380x480/181818/E50914?text=Ngoc+Hue+Portrait'">
+            <img src="TRASUA.jpg.jpg" alt="Nguyễn Thị Ngọc Huệ" class="hero-portrait" onerror="this.src='https://via.placeholder.com/380x480/181818/E50914?text=Ngoc+Hue+Portrait'">
         </div>
     </section>
 
@@ -520,7 +528,7 @@
         <p style="margin-top: 25px; color: #555;">© 2026 NGUYỄN THỊ NGỌC HUỆ — UFM STUDENT. All Rights Reserved.</p>
     </footer>
 
-    <!-- CỬA SỔ POPUP MODAL TƯƠNG TÁC CHUẨN NETFLIX -->
+    <!-- POPUP MODAL -->
     <div class="modal-overlay" id="customModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -540,7 +548,6 @@
             document.getElementById('customModal').style.display = 'none';
         }
 
-        // Đóng modal khi bấm ra ngoài vùng đen
         window.onclick = function(event) {
             var modal = document.getElementById('customModal');
             if (event.target == modal) {
