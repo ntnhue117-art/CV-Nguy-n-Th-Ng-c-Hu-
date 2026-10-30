@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NGOC HUE SHOW - Netflix Portfolio</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #141414;
+            --primary-red: #E50914;
+            --burgundy: #800020;
+            --card-bg: #181818;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            transition: 0.5s;
+        }
+
+        .logo {
+            color: var(--primary-red);
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section (Poster lớn) */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            background: linear-gradient(90deg, rgba(20,20,20,1) 30%, rgba(20,20,20,0.4) 70%), url('TRASUA.jpg') no-repeat center right/cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 10;
+        }
+
+        .show-badge {
+            color: var(--primary-red);
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, var(--burgundy));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .match-score {
+            color: #46d369;
+            font-weight: 800;
+        }
+
+        .badge-age {
+            border: 1px solid var(--text-gray);
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 4px;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--text-light);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(255,255,255,0.75);
+        }
+
+        .btn-secondary {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .progress-bar {
+            width: 35%;
+            height: 100%;
+            background: var(--primary-red);
+        }
+
+        /* Sections & Episode Cards */
+        .section-container {
+            padding: 40px 50px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .ep-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .ep-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
+            z-index: 10;
+        }
+
+        .ep-img {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, var(--burgundy), #330000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .ep-info {
+            padding: 15px;
+        }
+
+        .ep-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .ep-duration {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .ep-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        /* Modal / Episode Detail Window */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            width: 90%;
+            max-width: 650px;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        /* Easter Egg Notice */
+        .easter-egg {
+            background: linear-gradient(90deg, #800020, #141414);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px dashed var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">THE NGOC HUE SHOW</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Trang Chủ</a></li>
+            <li><a href="#episodes">Tập Phim (Kỹ Năng)</a></li>
+            <li><a href="#behind-scenes">Hậu Trường (Dự Án)</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Poster lớn) -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="show-badge"><i class="fa-solid fa-film"></i> PHIM TÀI LIỆU NGUYÊN BẢN</div>
+            <h1 class="hero-title">NGUYỄN THỊ NGỌC HUỆ</h1>
+            <div class="meta-info">
+                <span class="match-score">99% Độ Trùng Khớp Vị Trí</span>
+                <span>2026</span>
+                <span class="badge-age">MÙA 1</span>
+                <span>Full HD / Developer</span>
+            </div>
+            <p class="hero-desc">
+                Hành trình chinh phục đỉnh cao thiết kế UI/UX và lập trình phần mềm. Bối cảnh diễn ra tại TP. Thủ Đức với sự kết hợp hoàn hảo giữa tư duy sáng tạo và kỹ năng công nghệ thực chiến.
+            </p>
+            <div class="hero-btns">
+                <button class="btn btn-primary" onclick="downloadCV()"><i class="fa-solid fa-download"></i> Tải CV (PDF)</button>
+                <button class="btn btn-secondary" onclick="openTrailer()"><i class="fa-solid fa-play"></i> Xem Trailer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" title="Tiến trình khám phá hồ sơ"></div>
+    </div>
+
+    <!-- Episodes (Kỹ năng) -->
+    <div class="section-container" id="episodes">
+        <div class="section-title"><i class="fa-solid fa-list-ul" style="color: var(--primary-red);"></i> Danh Sách Tập (Kỹ Năng Nổi Bật)</div>
+        <div class="card-row">
+            
+            <div class="ep-card" onclick="openModal('Tập 1: Python & Web Frameworks', 'Chuyên sâu xây dựng ứng dụng Web tương tác với Python, Streamlit, Pandas và tối ưu luồng xử lý dữ liệu chuẩn nghiệp vụ.')">
+                <div class="ep-img">🐍</div>
+                <div class="ep-info">
+                    <div class="ep-title">Tập 1: Python Masterclass</div>
+                    <div class="ep-duration">45 phút • Lập trình chính</div>
+                    <div class="ep-desc">Làm chủ ngôn ngữ Python và các thư viện phân tích dữ liệu, tự động hóa hệ thống.</div>
+                </div>
+            </div>
+
+            <div class="ep-card" onclick="openModal('Tập 2: Nghệ Thuật UI/UX Minimalist', 'Tư duy thiết kế trải nghiệm người dùng tối giản, hài hòa màu sắc pastel/cinematic và cấu trúc Layout chuẩn mực.')">
+                <div class="ep-img">🎨</div>
+                <div class="ep-info">
+                    <div class="ep-title">Tập 2: Vibe & Aesthetic UI</div>
+                    <div class="ep-duration">50 phút • Thiết kế giao diện</div>
+                    <div class="ep-desc">Biến mọi ứng dụng trở nên cuốn hút với tư duy thiết kế trải nghiệm hiện đại.</div>
+                </div>
+            </div>
+
+            <div class="ep-card" onclick="openModal('Tập 3: Git & Cloud Deployment', 'Thành thạo triển khai mã nguồn lên GitHub, kết nối Netlify, Streamlit Cloud và CI/CD tự động.')">
+                <div class="ep-img">🚀</div>
+                <div class="ep-info">
+                    <div class="ep-title">Tập 3: Tối Ưu Hóa Cloud</div>
+                    <div class="ep-duration">30 phút • Hạ tầng & Quản lý</div>
+                    <div class="ep-desc">Đưa ứng dụng từ môi trường Local lên Internet cho hàng ngàn người dùng truy cập.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Behind the Scenes (Dự án) -->
+    <div class="section-container" id="behind-scenes">
+        <div class="section-title"><i class="fa-solid fa-clapperboard" style="color: var(--primary-red);"></i> Hậu Trường (Dự Án Đã Thực Hiện)</div>
+        <div class="card-row">
+            <div class="ep-card" onclick="openModal('BOBA FACTORY - Web App Đặt Hàng Trà Sữa', 'Hệ thống POS trà sữa cao cấp tích hợp in tem Sticker ly, Mã VietQR động, Thẻ tích điểm Digital và màn hình bếp KDS.')">
+                <div class="ep-img">🧋</div>
+                <div class="ep-info">
+                    <div class="ep-title">BOBA FACTORY Studio</div>
+                    <div class="ep-duration">Dự án Full-stack Web</div>
+                    <div class="ep-desc">Giải pháp Thương mại điện tử toàn diện dành cho tiệm trà sữa.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Easter Egg bí mật -->
+        <div class="easter-egg" onclick="triggerEasterEgg()">
+            🎁 <b>EASTER EGG BÍ MẬT:</b> Nhấn vào đây để mở khóa danh hiệu "Thánh Trà Sữa"!
+        </div>
+    </div>
+
+    <!-- Modal Chi Tiết Tập -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color: var(--primary-red); margin-bottom: 15px;"></h2>
+            <p id="modalDesc" style="line-height: 1.6; color: var(--text-gray);"></p>
+        </div>
+    </div>
+
+    <!-- Footer & Liên Hệ -->
+    <footer id="contact">
+        <p style="font-size: 18px; color: var(--text-light); font-weight: 700; margin-bottom: 10px;">BẠN ĐÃ SẴN SÀNG HỢP TÁC CÙNG NGỌC HUỆ?</p>
+        <p>📞 Hotline/Zalo: 0702.884.202 | ✉️ Email: ngochue.art@gmail.com | 📍 TP. Thủ Đức, TP.HCM</p>
+        <p style="margin-top: 20px; color: #555;">© 2026 THE NGOC HUE SHOW. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <!-- JavaScript Tương Tác -->
+    <script>
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('detailModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        function downloadCV() {
+            alert('📥 Đang chuẩn bị bản CV PDF chính thức của Nguyễn Thị Ngọc Huệ!');
+        }
+
+        function openTrailer() {
+            alert('🎬 Trailer "THE NGOC HUE SHOW": Chào mừng bạn đến với thế giới sáng tạo & lập trình!');
+        }
+
+        function triggerEasterEgg() {
+            alert('🎉 Chúc mừng bạn đã tìm thấy Easter Egg! Bạn nhận được danh hiệu "Nhà Tuyển Dụng Tinh Tế".');
+        }
+    </script>
+</body>
+</html>
