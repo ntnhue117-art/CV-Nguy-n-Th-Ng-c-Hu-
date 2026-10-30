@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGUYỄN THỊ NGỌC HUỆ - Personal Portfolio</title>
+    <title>NGUYỄN THỊ NGỌC HUỆ - Netflix Portfolio</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,16 +43,17 @@
             padding: 18px 50px;
             z-index: 100;
             background: rgba(20, 20, 20, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 9, 20, 0.2);
         }
 
         .logo {
             color: var(--primary-red);
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            text-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
         }
 
         .nav-links {
@@ -66,26 +67,28 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary-red);
+            text-shadow: 0 0 8px var(--primary-red);
         }
 
-        /* 1. HOME (Hero Section) */
+        /* Hero Section */
         .hero {
             position: relative;
-            min-height: 90vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 100px 50px 50px 50px;
+            padding: 110px 50px 50px 50px;
             gap: 40px;
+            background: radial-gradient(circle at 80% 30%, rgba(128, 0, 32, 0.25) 0%, rgba(20, 20, 20, 1) 70%);
         }
 
         .hero-content {
-            flex: 1;
+            flex: 1.2;
             max-width: 650px;
             z-index: 10;
         }
@@ -102,15 +105,15 @@
             max-width: 380px;
             height: 480px;
             object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--burgundy);
-            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 20px;
+            border: 2px solid var(--primary-red);
+            box-shadow: 0 0 35px rgba(229, 9, 20, 0.4);
+            transition: all 0.5s ease;
         }
 
         .hero-portrait:hover {
-            transform: scale(1.03) rotate(1deg);
-            box-shadow: 0 15px 40px rgba(229, 9, 20, 0.5);
+            transform: scale(1.04) translateY(-5px);
+            box-shadow: 0 0 50px rgba(229, 9, 20, 0.7);
         }
 
         .show-badge {
@@ -120,17 +123,24 @@
             margin-bottom: 12px;
             font-size: 13px;
             display: inline-block;
-            background: rgba(229, 9, 20, 0.1);
-            padding: 4px 12px;
+            background: rgba(229, 9, 20, 0.15);
+            padding: 5px 14px;
             border-radius: 20px;
-            border: 1px solid rgba(229, 9, 20, 0.3);
+            border: 1px solid rgba(229, 9, 20, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 15px;
             background: linear-gradient(45deg, #ffffff, var(--primary-red), #ff758c);
             background-size: 200% auto;
@@ -166,7 +176,7 @@
         .hero-btns { display: flex; gap: 15px; }
 
         .btn {
-            padding: 12px 26px;
+            padding: 12px 28px;
             border-radius: 6px;
             border: none;
             font-size: 14px;
@@ -180,56 +190,80 @@
         }
 
         .btn-primary { background-color: var(--text-light); color: var(--bg-dark); }
-        .btn-primary:hover { background-color: rgba(255,255,255,0.8); transform: translateY(-2px); }
+        .btn-primary:hover { background-color: rgba(255,255,255,0.85); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,255,255,0.3); }
         .btn-secondary { background-color: rgba(109, 109, 110, 0.7); color: var(--text-light); }
-        .btn-secondary:hover { background-color: rgba(109, 109, 110, 0.4); transform: translateY(-2px); }
+        .btn-secondary:hover { background-color: rgba(109, 109, 110, 0.4); transform: translateY(-3px); }
 
-        /* General Section Layout */
-        .section-container { padding: 40px 50px; }
+        /* Section Style */
+        .section-container { padding: 45px 50px; }
         .section-title {
             font-size: 22px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             gap: 12px;
-            border-left: 4px solid var(--primary-red);
-            padding-left: 12px;
+            border-left: 5px solid var(--primary-red);
+            padding-left: 14px;
         }
 
         .card-row {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 22px;
         }
 
+        /* NETFLIX CARD INTERACTION */
         .ep-card {
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.08);
+            cursor: pointer;
+            position: relative;
         }
 
         .ep-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.25);
-            border-color: rgba(229, 9, 20, 0.4);
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 12px 30px rgba(229, 9, 20, 0.35);
+            border-color: var(--primary-red);
+            z-index: 10;
+        }
+
+        .ep-card::after {
+            content: '▶ Bấm xem chi tiết';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(229, 9, 20, 0.9);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ep-card:hover::after {
+            opacity: 1;
         }
 
         .ep-img {
             width: 100%;
-            height: 130px;
-            background: linear-gradient(135deg, var(--burgundy), #220000);
+            height: 140px;
+            background: linear-gradient(135deg, var(--burgundy), #1a0000);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 40px;
+            font-size: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .ep-info { padding: 18px; }
         .ep-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-        .ep-duration { font-size: 12px; color: var(--primary-red); margin-bottom: 8px; font-weight: 600; }
+        .ep-duration { font-size: 12px; color: var(--primary-red); margin-bottom: 8px; font-weight: 700; }
         .ep-desc { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
 
         .info-box {
@@ -240,10 +274,75 @@
             margin-bottom: 15px;
             line-height: 1.7;
             color: var(--text-gray);
-            transition: border-color 0.3s;
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        .info-box:hover { border-color: rgba(229, 9, 20, 0.3); }
+
+        .info-box:hover {
+            border-color: var(--primary-red);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(229, 9, 20, 0.2);
+        }
+
         .info-box h3 { color: var(--text-light); margin-bottom: 10px; font-size: 18px; }
+
+        /* NETFLIX MODAL WINDOW (CỬA SỔ POPUP TƯƠNG TÁC) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: #181818;
+            border: 1px solid var(--primary-red);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(229, 9, 20, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 26px;
+            color: var(--text-gray);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover { color: var(--primary-red); }
+
+        .modal-header {
+            color: var(--primary-red);
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .modal-body {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
 
         /* Footer */
         footer {
@@ -254,14 +353,6 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 40px;
             background: #0d0d0d;
-        }
-
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; padding: 100px 20px 40px 20px; }
-            .hero-btns { justify-content: center; }
-            .section-container { padding: 30px 20px; }
-            nav { padding: 15px 20px; }
-            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -285,43 +376,42 @@
     <!-- 1. HOME -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="show-badge"><i class="fa-solid fa-star"></i> PERSONAL PORTFOLIO</div>
+            <div class="show-badge"><i class="fa-solid fa-film"></i> PERSONAL PORTFOLIO</div>
             <h1 class="hero-title">NGUYỄN THỊ<br>NGỌC HUỆ</h1>
             <div class="meta-info">
-                <span class="match-score">Sinh viên năm 2</span>
+                <span class="match-score">99% Độ Phù Hợp</span>
                 <span class="badge-age">UFM</span>
-                <span>Trường Đại học Tài chính - Marketing</span>
+                <span>Sinh viên năm 2 — Đại học Tài chính - Marketing</span>
             </div>
             <p class="hero-desc">
-                Xin chào mọi người! Mình là Ngọc Huệ, sinh viên năm 2 đam mê học hỏi, sáng tạo ứng dụng Web và thiết kế trải nghiệm người dùng (UX/UI). Trang Portfolio này là nơi mình chia sẻ quá trình học tập, kỹ năng và các dự án cá nhân!
+                Xin chào mọi người! Mình là Ngọc Huệ, sinh viên năm 2 đam mê học hỏi, sáng tạo ứng dụng Web và thiết kế trải nghiệm người dùng (UX/UI). Trang Portfolio phong cách Netflix này là nơi mình chia sẻ hành trình học tập và các dự án!
             </p>
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-compass"></i> Khám phá Portfolio</a>
-                <button class="btn btn-secondary" onclick="alert('📥 Đang tải CV PDF...')"><i class="fa-solid fa-file-pdf"></i> Tải CV (PDF)</button>
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-play"></i> Khám phá Portfolio</a>
+                <button class="btn btn-secondary" onclick="openModal('Tải CV Bản Đầy Đủ', 'Bản CV PDF chính thức của Nguyễn Thị Ngọc Huệ bao gồm chi tiết quá trình học tập, bảng điểm và các sản phẩm đã hoàn thành. Nhấn nút bên dưới để tải về ngay!')"><i class="fa-solid fa-file-pdf"></i> Tải CV (PDF)</button>
             </div>
         </div>
 
         <!-- Khung ảnh chân dung bên phải -->
         <div class="hero-image-container">
-            <img src="TRASUA.jpg" alt="Nguyễn Thị Ngọc Huệ" class="hero-portrait" onerror="this.src='https://via.placeholder.com/380x480?text=Ngoc+Hue+Portrait'">
+            <img src="TRASUA.jpg" alt="Nguyễn Thị Ngọc Huệ" class="hero-portrait" onerror="this.src='https://via.placeholder.com/380x480/181818/E50914?text=Ngoc+Hue+Portrait'">
         </div>
     </section>
 
     <!-- 2. ABOUT ME -->
     <div class="section-container" id="about">
-        <div class="section-title"><i class="fa-solid fa-user" style="color: var(--primary-red);"></i> 1. Giới Thiệu Bản Thân & Mục Tiêu Nghề Nghiệp</div>
-        <div class="info-box">
-            <h3>🎯 Mục Tiêu Nghề Nghiệp</h3>
+        <div class="section-title"><i class="fa-solid fa-user" style="color: var(--primary-red);"></i> 1. Giới Thiệu Bản Thân & Mục Tiêu</div>
+        <div class="info-box" onclick="openModal('Mục Tiêu Nghề Nghiệp Chi Tiết', '• Học hỏi và nâng cao tư duy thiết kế giao diện (UI/UX) cùng kỹ năng lập trình Web thực tế.<br>• Tích lũy kinh nghiệm thực chiến qua các dự án thực tế.<br>• Định hướng trở thành một Front-end Developer / UI UX Designer chuyên nghiệp trong tương lai gần.<br><br>📍 Khu vực: TP. Thủ Đức, TP.HCM<br>💬 Tính cách: Hòa đồng, chủ động, luôn có trách nhiệm cao trong công việc.')">
+            <h3>🎯 Mục Tiêu Nghề Nghiệp (Bấm để xem chi tiết)</h3>
             <p>• Học hỏi và nâng cao tư duy thiết kế giao diện (UI/UX) cùng kỹ năng lập trình Web thực tế.</p>
             <p>• Tích lũy kinh nghiệm làm việc thực chiến, định hướng phát triển bản thân trở thành một Front-end Developer / UI UX Designer chuyên nghiệp.</p>
-            <p style="margin-top: 10px;">📍 <b>Khu vực:</b> TP. Thủ Đức, TP. Hồ Chí Minh | 💬 <b>Tính cách:</b> Hòa đồng, chủ động, có trách nhiệm trong công việc.</p>
         </div>
     </div>
 
     <!-- 3. EDUCATION -->
     <div class="section-container" id="education">
         <div class="section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--primary-red);"></i> 2. Học Vấn (Education)</div>
-        <div class="info-box">
+        <div class="info-box" onclick="openModal('Trường Đại học Tài chính - Marketing (UFM)', '<b>Trình độ:</b> Sinh viên năm 2 (Khóa 2024 – 2028)<br><b>Chuyên ngành:</b> Công nghệ Thông tin / Lập trình Web & Thiết kế hệ thống.<br><br><b>Các môn học tiêu biểu:</b> Lập trình Python, Cấu trúc dữ liệu & Giải thuật, Thiết kế Giao diện Web, Quản trị CSDL.')">
             <h3>🏫 Trường Đại học Tài chính - Marketing (UFM)</h3>
             <p><b>Trình độ:</b> Sinh viên năm 2 (Khóa 2024 – 2028)</p>
             <p>• Lĩnh vực học tập: Công nghệ Thông tin / Lập trình Web & Thiết kế hệ thống.</p>
@@ -333,7 +423,7 @@
         <div class="section-title"><i class="fa-solid fa-laptop-code" style="color: var(--primary-red);"></i> 3. Kỹ Năng (Skills)</div>
         <div class="card-row">
             
-            <div class="ep-card">
+            <div class="ep-card" onclick="openModal('Kỹ Năng Chuyên Môn - Web & Python', '• Thành thạo cấu trúc HTML5 / CSS3 Custom với phong cách giao diện Minimalist & Cinematic.<br>• Sử dụng ngôn ngữ Python để xây dựng ứng dụng tương tác (Streamlit Framework).<br>• Tư duy thiết kế UX/UI tối ưu trải nghiệm đọc cho người dùng trên đa thiết bị.')">
                 <div class="ep-img">💻</div>
                 <div class="ep-info">
                     <div class="ep-title">Kỹ năng chuyên môn</div>
@@ -342,7 +432,7 @@
                 </div>
             </div>
 
-            <div class="ep-card">
+            <div class="ep-card" onclick="openModal('Kỹ Năng Tin Học & Công Cụ Dev', '• Sở hữu Chứng chỉ Tin học Quốc tế MOS (Microsoft Office Specialist).<br>• Thành thạo các phần mềm văn phòng: Word, Excel, PowerPoint chuẩn nghiệp vụ.<br>• Quản lý mã nguồn dự án qua Git & GitHub, triển khai Cloud tự động trên Netlify.')">
                 <div class="ep-img">📊</div>
                 <div class="ep-info">
                     <div class="ep-title">Kỹ năng tin học</div>
@@ -351,7 +441,7 @@
                 </div>
             </div>
 
-            <div class="ep-card">
+            <div class="ep-card" onclick="openModal('Kỹ Năng Mềm & Ngoại Ngữ', '• Kỹ năng làm việc nhóm hòa đồng, lắng nghe và kết nối các thành viên.<br>• Kỹ năng quản lý thời gian và hoàn thành công việc đúng tiến độ.<br>• Khả năng đọc hiểu tài liệu Tiếng Anh chuyên ngành Công nghệ thông tin.')">
                 <div class="ep-img">🤝</div>
                 <div class="ep-info">
                     <div class="ep-title">Kỹ năng mềm & Ngoại ngữ</div>
@@ -366,9 +456,24 @@
     <!-- 5. ACTIVITIES -->
     <div class="section-container" id="activities">
         <div class="section-title"><i class="fa-solid fa-users" style="color: var(--primary-red);"></i> 4. Hoạt Động & Kinh Nghiệm Ngoại Khóa</div>
-        <div class="info-box">
-            <p>⭐ <b>Thành viên CLB Sinh viên 5 Tốt UFM (SV5T UFM):</b> Tích cực tham gia các hoạt động phong trào, rèn luyện kỹ năng mềm và tinh thần kết nối đồng đội.</p>
-            <p style="margin-top: 8px;">🔴 <b>Thành viên Đội Truyền Thông Nhịp Đập Đỏ:</b> Hỗ trợ công tác truyền thông, nội dung và tổ chức các sự kiện tình nguyện, hiến máu nhân đạo.</p>
+        <div class="card-row">
+            <div class="ep-card" onclick="openModal('Thành viên CLB Sinh viên 5 Tốt UFM (SV5T)', '• Tích cực hưởng ứng và tham gia các hoạt động phong trào rèn luyện 5 tiêu chí: Đạo đức tốt, Học tập tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt.<br>• Rèn luyện tinh thần chủ động, làm việc nhóm và giao tiếp kết nối đồng đội.')">
+                <div class="ep-img">⭐</div>
+                <div class="ep-info">
+                    <div class="ep-title">CLB Sinh viên 5 Tốt UFM</div>
+                    <div class="ep-duration">Thành viên chính thức</div>
+                    <div class="ep-desc">Tích cực tham gia các hoạt động phong trào, rèn luyện kỹ năng mềm và tinh thần kết nối đồng đội.</div>
+                </div>
+            </div>
+
+            <div class="ep-card" onclick="openModal('Đội Truyền Thông Nhịp Đập Đỏ', '• Đồng hành cùng Đội Truyền Thông trong các chiến dịch tuyên truyền và tổ chức ngày hội Hiến máu nhân đạo.<br>• Hỗ trợ sáng tạo nội dung, hình ảnh truyền thông và điều phối sự kiện tình nguyện.')">
+                <div class="ep-img">🔴</div>
+                <div class="ep-info">
+                    <div class="ep-title">Đội Truyền Thông Nhịp Đập Đỏ</div>
+                    <div class="ep-duration">Thành viên Ban Truyền thông</div>
+                    <div class="ep-desc">Hỗ trợ công tác truyền thông, nội dung và tổ chức các sự kiện tình nguyện, hiến máu nhân đạo.</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -377,16 +482,16 @@
         <div class="section-title"><i class="fa-solid fa-box-archive" style="color: var(--primary-red);"></i> 5. Dự Án & Bài Tập Thực Tế (Projects)</div>
         <div class="card-row">
             
-            <div class="ep-card">
+            <div class="ep-card" onclick="openModal('BOBA FACTORY - Web App Quản Lý Trà Sữa', '<b>Mô tả:</b> Ứng dụng Web đặt hàng trà sữa trực tuyến kết hợp quản lý bán hàng cho tiệm trà sữa Studio.<br><br><b>Tính năng nổi bật:</b><br>• Custom cup: Chọn đường, đá, topping và in lời nhắn sticker dán ly.<br>• Tự động tạo mã VietQR chuẩn số tiền đơn hàng.<br>• Thẻ tích điểm Digital Stamp Card tự động.<br>• Màn hình KDS cho bếp và báo cáo doanh thu.')">
                 <div class="ep-img">🧋</div>
                 <div class="ep-info">
                     <div class="ep-title">BOBA FACTORY Web App</div>
-                    <div class="ep-duration">Dự án học tập</div>
+                    <div class="ep-duration">Dự án học tập Full-stack</div>
                     <div class="ep-desc">Ứng dụng đặt hàng trà sữa tích hợp tùy chỉnh sticker dán ly, mã VietQR chuyển khoản tự động và quản lý đơn hàng.</div>
                 </div>
             </div>
 
-            <div class="ep-card">
+            <div class="ep-card" onclick="openModal('Netflix Portfolio CV App', '<b>Mô tả:</b> Website giới thiệu bản thân lấy cảm hứng từ giao diện phim Netflix Cinematic màu đỏ rượu Burgundy.<br><br><b>Tính năng nổi bật:</b><br>• Triển khai thành công trên Netlify Cloud Hosting.<br>• Tích hợp Cửa sổ Modal Popup tương tác đa chiều.<br>• Responsive 100% hiển thị hoàn hảo trên điện thoại & máy tính.')">
                 <div class="ep-img">🎬</div>
                 <div class="ep-info">
                     <div class="ep-title">Netflix Portfolio CV</div>
@@ -401,8 +506,9 @@
     <!-- 7. CERTIFICATES -->
     <div class="section-container" id="certificates">
         <div class="section-title"><i class="fa-solid fa-certificate" style="color: var(--primary-red);"></i> 6. Chứng Chỉ (Certificates)</div>
-        <div class="info-box">
-            <p>📜 <b>Chứng chỉ Tin học Quốc tế MOS (Microsoft Office Specialist):</b> Bằng chứng nhận thành thạo kỹ năng tin học văn phòng chuẩn quốc tế.</p>
+        <div class="info-box" onclick="openModal('Chứng chỉ Tin học Quốc tế MOS', '<b>Microsoft Office Specialist (MOS):</b><br>Chứng chỉ quốc tế đánh giá kỹ năng tin học văn phòng cao cấp do Certiport cấp. Khẳng định khả năng sử dụng thành thạo các công cụ phục vụ học tập và công việc chuyên nghiệp.')">
+            <h3>📜 Chứng chỉ Tin học Quốc tế MOS (Microsoft Office Specialist)</h3>
+            <p>• Chứng nhận kỹ năng sử dụng thành thạo bộ công cụ tin học văn phòng chuẩn quốc tế.</p>
         </div>
     </div>
 
@@ -414,5 +520,33 @@
         <p style="margin-top: 25px; color: #555;">© 2026 NGUYỄN THỊ NGỌC HUỆ — UFM STUDENT. All Rights Reserved.</p>
     </footer>
 
+    <!-- CỬA SỔ POPUP MODAL TƯƠNG TÁC CHUẨN NETFLIX -->
+    <div class="modal-overlay" id="customModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-header" id="modalTitle">Tiêu đề chi tiết</div>
+            <div class="modal-body" id="modalBody">Nội dung chi tiết...</div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, bodyText) {
+            document.getElementById('modalTitle').innerHTML = title;
+            document.getElementById('modalBody').innerHTML = bodyText;
+            document.getElementById('customModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('customModal').style.display = 'none';
+        }
+
+        // Đóng modal khi bấm ra ngoài vùng đen
+        window.onclick = function(event) {
+            var modal = document.getElementById('customModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
